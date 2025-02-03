@@ -17,9 +17,9 @@ use App\Http\Controllers\DepartemenController;
 |
 */
 
-Route::get('/tables', function () {
-    return view('tables');
-})->name('tables');
+Route::get('/staff', function () {
+    return view('staff');
+})->name('staff');
 
 Route::get('/profile', function () {
     return view('profile'); // Ganti dengan halaman profilmu
@@ -33,6 +33,7 @@ Route::post('/logout', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard')->middleware('iniLogin');
+
 
 Route::resource('departemen', DepartemenController::class)->middleware('iniLogin');
 

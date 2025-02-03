@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +9,7 @@
   <title>
     Selamat Datang! - Login Admin
   </title>
-  <!--     Fonts and icons     -->
+  <!-- Fonts and icons -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700,900" />
   <!-- Nucleo Icons -->
   <link href="{{asset('assets/css/nucleo-icons.css')}}" rel="stylesheet" />
@@ -22,6 +20,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
   <!-- CSS Files -->
   <link id="pagestyle" href="{{asset('assets/css/material-dashboard.css?v=3.2.0')}}" rel="stylesheet" />
+  <!-- SweetAlert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="bg-gray-200">
@@ -29,12 +29,12 @@
     <div class="row">
       <div class="col-12">
         <!-- Navbar -->
-      
         <!-- End Navbar -->
       </div>
     </div>
   </div>
-  <main class="main-content  mt-0">
+
+  <main class="main-content mt-0">
     <div class="page-header align-items-start min-vh-100" style="background-image: url('https://images.unsplash.com/photo-1497294815431-9365093b7331?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80');">
       <span class="mask bg-gradient-dark opacity-6"></span>
       <div class="container my-auto">
@@ -44,13 +44,11 @@
               <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                 <div class="bg-gradient-dark shadow-dark border-radius-lg py-3 pe-1">
                   <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">Login Admin</h4>
-                  <div class="row mt-3">
-                    
-                  </div>
+                  <div class="row mt-3"></div>
                 </div>
               </div>
               <div class="card-body">
-                <form action="{{route ('sesi.login')}}" role="form" class="text-start" method="POST">
+                <form action="{{route('sesi.login')}}" role="form" class="text-start" method="POST">
                   @csrf
                   <div class="input-group input-group-outline my-3">
                     <input type="email" name="email" class="form-control" placeholder="Email" required>
@@ -59,7 +57,7 @@
                     <input type="password" name="password" class="form-control" placeholder="Password" required>
                   </div>
                   <div class="form-check form-switch d-flex align-items-center mb-3">
-                    <input class="form-check-input" type="checkbox" id="rememberMe">
+                    <input class="form-check-input" type="checkbox" name="remember" id="rememberMe">
                     <label class="form-check-label mb-0 ms-3" for="rememberMe">Remember me</label>
                   </div>
                   <div class="text-center">
@@ -88,17 +86,18 @@
                 for a better web.
               </div>
             </div>
-           
           </div>
         </div>
       </footer>
     </div>
   </main>
-  <!--   Core JS Files   -->
+
+  <!-- Core JS Files -->
   <script src="{{asset('assets/js/core/popper.min.js')}}"></script>
   <script src="{{asset('assets/js/core/bootstrap.min.js')}}"></script>
   <script src="{{asset('assets/js/plugins/perfect-scrollbar.min.js')}}"></script>
   <script src="{{asset('assets/js/plugins/smooth-scrollbar.min.js')}}"></script>
+
   <script>
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
@@ -108,10 +107,41 @@
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
   </script>
+
+  <!-- Pop-up Error -->
+  @if (session('error'))
+  <script>
+    Swal.fire({
+      icon: 'error',
+      title: 'Login Gagal',
+      text: "{{ session('error') }}",
+    });
+  </script>
+  @endif
+
+  <!-- Tambahkan SweetAlert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+@if (session('success'))
+    <script>
+        Swal.fire({
+            title: "Login Berhasil!",
+            text: "{{ session('success') }}",
+            icon: "success",
+            confirmButtonText: "OK"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "{{ url('dashboard') }}";
+            }
+        });
+    </script>
+@endif
+
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
-  <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
+  <!-- Control Center for Material Dashboard -->
   <script src="{{asset('assets/js/material-dashboard.min.js?v=3.2.0')}}"></script>
+
 </body>
 
 </html>

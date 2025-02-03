@@ -6,7 +6,7 @@
             <div class="card my-4">
                 <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                     <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3">
-                        <h6 class="text-white text-capitalize ps-3">Authors table</h6>
+                        <h6 class="text-white text-capitalize ps-3">Staff Table</h6>
                     </div>
                 </div>
                 <div class="card-body px-0 pb-2">
@@ -29,8 +29,8 @@
                             <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3 border-radius-lg" alt="user1">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">John Michael</h6>
-                            <p class="text-xs text-secondary mb-0">john@creative-tim.com</p>
+                            <h6 class="mb-0 text-sm">Razaan Alwan</h6>
+                            <p class="text-xs text-secondary mb-0">AnakBaik@gmail.com</p>
                           </div>
                         </div>
                       </td>
@@ -57,8 +57,8 @@
                             <img src="../assets/img/team-3.jpg" class="avatar avatar-sm me-3 border-radius-lg" alt="user2">
                           </div>
                           <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Alexa Liras</h6>
-                            <p class="text-xs text-secondary mb-0">alexa@creative-tim.com</p>
+                            <h6 class="mb-0 text-sm">Indra Goldy</h6>
+                            <p class="text-xs text-secondary mb-0">AnakJahat@gmail.com</p>
                           </div>
                         </div>
                       </td>

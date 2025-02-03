@@ -23,23 +23,20 @@ class LoginController extends Controller
         ]);
 
         // Tentukan apakah "Remember Me" dicentang
-        $remember = $request->has('remember') ? true : false;
+        $remember = $request->has('remember');
 
-        // Cek kredensial dan login user
-        if (Auth::attempt($credentials)) {
-            // Arahkan ke dashboard jika berhasil login
-            return redirect()->intended('dashboard')->with('success','Berhasil Login');
+        if (Auth::attempt($credentials, $remember)) {
+            return redirect()->route('sesi.login')->with('success', 'Selamat datang, Anda berhasil login!');
         }
+        
 
-        // Kembali ke form login jika gagal
-        return back()->withErrors([
-            'email' => 'The provided credentials are incorrect.',
-        ]);
+        // Kembali ke form login jika gagal dengan session flash (agar bisa dipakai untuk pop-up)
+        return back()->with('error', 'Email atau password yang Anda masukkan salah.')->withInput();
     }
 
     public function logout()
     {
         Auth::logout(); // Logout user
-        return redirect('/sesi/login'); // Redirect ke halaman login setelah logout
+        return redirect()->route('sesi.login'); // Redirect ke halaman login setelah logout
     }
 }

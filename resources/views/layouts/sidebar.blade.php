@@ -3,7 +3,7 @@
         <i class="fas fa-times p-3 cursor-pointer text-dark opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
         <a class="navbar-brand px-4 py-3 m-0" href="{{ route('dashboard')}}">
             <img src="../assets/img/logo-ct-dark.png" class="navbar-brand-img" width="26" height="26" alt="main_logo">
-            <span class="ms-1 text-sm text-dark">Kaop</span>
+            <span class="ms-1 text-sm text-dark">MK</span>
         </a>
     </div>
     <hr class="horizontal dark mt-0 mb-2">
@@ -16,22 +16,22 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ request()->routeIs('tables') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ route('tables') }}">
+                <a class="nav-link {{ request()->routeIs('staff') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ route('staff') }}">
                     <i class="material-symbols-rounded opacity-5">table_view</i>
-                    <span class="nav-link-text ms-1">Pegawai</span>
+                    <span class="nav-link-text ms-1">Staff</span>
                 </a>
             </li>
             <ul class="nav flex-column">
             <!-- Menu Utama -->
                 <li class="nav-item">
                     <a class="nav-link text-dark" data-bs-toggle="collapse" href="#submenuLogistik" role="button">
-                        <i class="fas fa-box"></i> Input
+                    <i class="material-symbols-rounded opacity-5">Input</i>
+                    <span class="nav-link-text ms-1">Input</span>
                     </a>
                     <ul class="collapse list-unstyled" id="submenuLogistik">
-                        <li><a class="nav-link text-dark" href="{{route('dashboard')}}">Barang</a></li>
-                        <li><a class="nav-link text-dark" href="">Stok</a></li>
+                        <li><a class="nav-link text-dark" href="{{route('dashboard')}}">Stock</a></li>
                         <li><a class="nav-link text-dark" href="{{route('departemen.index')}}">Departemen</a></li>
-                        <li><a class="nav-link text-dark" href="">Jabatan</a></li>
+                        <li><a class="nav-link text-dark" href="">Role</a></li>
                  </ul>
                 </li>
             </ul>
