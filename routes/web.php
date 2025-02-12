@@ -6,6 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DepartemenController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\StaffController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,11 @@ Route::get('/dashboard', function () {
 
 Route::resource('departemen', DepartemenController::class)->middleware('iniLogin');
 Route::resource('role', RoleController::class)->middleware('iniLogin');
+Route::resource('staff', StaffController::class)->parameters([
+    'staff' => 'nip'
+]);
+
+
 
 // Route::get('/', [LoginController::class, 'index'])->name('sesi.login')->middleware('iniTamu');
 Route::get('sesi/login', [LoginController::class, 'index'])->name('sesi.login')->middleware('iniTamu');

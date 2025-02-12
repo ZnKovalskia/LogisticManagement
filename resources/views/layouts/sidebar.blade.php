@@ -16,7 +16,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ request()->routeIs('staff') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ route('staff') }}">
+                <a class="nav-link {{ request()->routeIs('staff') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ route('staff.index') }}">
                     <i class="material-symbols-rounded opacity-5">table_view</i>
                     <span class="nav-link-text ms-1">Staff</span>
                 </a>
@@ -49,6 +49,7 @@
     </div>
     <div class="sidenav-footer position-absolute w-100 bottom-0">
         <div class="mx-3">
+        <a class="btn btn-outline-dark mt-4 w-100" href="{{ route('home')}}" type="button">Kembali ke halaman</a>
             <form action="{{ route('logout') }}" method="POST">
                 @csrf
                 <button type="submit" class="btn bg-gradient-dark w-100">Log Out</button>
