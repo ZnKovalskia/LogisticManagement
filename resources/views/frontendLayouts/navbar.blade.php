@@ -15,7 +15,7 @@
 	          <ul class="list-style-one light">
 	            <li><i class="far fa-clock"></i> Mon - Fri: 09.00am - 10.00pm</li>
 	            <li><i class="fa fa-map-marker-alt"></i> Garut, Jawa Barat | Indonesia</li>
-	            <li><i class="far fa-envelope"></i> <a href="https://html.kodesolution.com/cdn-cgi/l/email-protection#92e6e0f3fce1e6f7ead2fff3fbfebcf1fdff"><span class="__cf_email__" data-cfemail="235751424d5057465b634e424a4f0d404c4e">RazaanGoldy@gmail.com</span></a></li>
+	            <li><i class="fa-regular fa-user"></i> <a href="{{ route('dashboard') }}">Admin Only</span></a></li>
 	          </ul>
 	        </div>
 	      </div>
@@ -33,48 +33,24 @@
 	        <div class="nav-outer">
 	          <nav class="nav main-menu">
 	            <ul class="navigation">
-	              <li class="current dropdown"><a href="#">Home</a>
+	              <li class="current"><a href="#">Home</a>
 	              </li>
-	              <li class="dropdown"><a href="#">Services</a>
-	                <ul>
-	                  <li><a href="page-services.html">Services</a></li>
-	                  <li><a href="page-service-details.html">Services Details</a></li>
-	                </ul>
+	              <li class=""><a href="page-services.html">Services</a>
 	              </li>
 	              <li class="dropdown"><a href="#">Pages</a>
 	                <ul>
 	                  <li><a href="page-about.html">About</a></li>
-	                  <li class="dropdown"><a href="#">Projects</a>
-	                    <ul>
-	                      <li><a href="page-projects.html">Projects List</a></li>
-	                      <li><a href="page-project-details.html">Project Details</a></li>
-	                    </ul>
-	                  </li>
-	                  <li class="dropdown"><a href="#">Team</a>
-	                    <ul>
-	                      <li><a href="page-team.html">Team Grid</a></li>
-	                      <li><a href="page-team-details.html">Team Details</a></li>
-	                    </ul>
+	                  <li class=""><a href="page-team.html">Team</a>
 	                  </li>
 	                  <li class="dropdown"><a href="#">Shop</a>
 	                    <ul>
 	                      <li><a href="shop-products.html">Products</a></li>
-	                      <li><a href="shop-products-sidebar.html">Products with Sidebar</a></li>
-	                      <li><a href="shop-product-details.html">Product Details</a></li>
 	                      <li><a href="shop-cart.html">Cart</a></li>
 	                      <li><a href="shop-checkout.html">Checkout</a></li>
 	                    </ul>
 	                  </li>
 	                  <li><a href="page-testimonial.html">Testimonial</a></li>
 	                  <li><a href="page-pricing.html">Pricing</a></li>
-	                  <li><a href="page-faq.html">Faq</a></li>
-	                  <li><a href="page-404.html">404</a></li>
-	                </ul>
-	              </li>
-	              <li class="dropdown"><a href="#">Blog</a>
-	                <ul>
-	                  <li><a href="news-grid.html">News Grid</a></li>
-	                  <li><a href="news-details.html">News Details</a></li>
 	                </ul>
 	              </li>
 	              <li><a href="page-contact.html">Contact</a></li>
