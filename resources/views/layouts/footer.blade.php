@@ -12,7 +12,7 @@
             <div class="col-lg-6">
                 <ul class="nav nav-footer justify-content-center justify-content-lg-end">
                     <li class="nav-item">
-                        <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Kaop Management</a>
+                        <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">TRANSFOX</a>
                     </li>
                     <!-- Tambahkan item footer lainnya di sini -->
                 </ul>

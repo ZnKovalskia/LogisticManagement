@@ -40,7 +40,7 @@
 	              <li class="dropdown"><a href="#">Pages</a>
 	                <ul>
 	                  <li><a href="page-about.html">About</a></li>
-	                  <li class=""><a href="page-team.html">Team</a>
+	                  <li class=""><a href="{{route('team')}}">Team</a>
 	                  </li>
 	                  <li class="dropdown"><a href="#">Shop</a>
 	                    <ul>
@@ -49,7 +49,7 @@
 	                      <li><a href="shop-checkout.html">Checkout</a></li>
 	                    </ul>
 	                  </li>
-	                  <li><a href="page-testimonial.html">Testimonial</a></li>
+	                  <li><a href="{{route('testimonial')}}">Testimonial</a></li>
 	                  <li><a href="page-pricing.html">Pricing</a></li>
 	                </ul>
 	              </li>

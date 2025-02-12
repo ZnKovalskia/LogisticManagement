@@ -27,8 +27,16 @@ Route::get('/staff', function () {
     return view('staff');
 })->name('staff');
 
+Route::get('/team', function () {
+    return view('frontend.team');
+})->name('team');
+
+Route::get('/testimonial', function () {
+    return view('frontend.testimonial');
+})->name('testimonial');
+
 Route::get('/profile', function () {
-    return view('profile'); // Ganti dengan halaman profilmu
+    return view('profile');
 })->name('profile');
 
 Route::post('/logout', function () {

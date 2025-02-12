@@ -17,18 +17,29 @@
                 @enderror
             </div>
         </div>
-        <div class="card-footer" style="padding: 15px; display: flex; justify-content: space-between;">
-            <button type="submit" style="background-color: #007bff; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer;">
-                <span class="material-symbols-rounded" style="vertical-align: middle;">save</span> Update
-            </button>
-            <a href="{{ route('departemen.index') }}" style="background-color: #6c757d; color: white; border: none; padding: 10px 15px; border-radius: 4px; cursor: pointer; text-decoration: none;">
-                <span class="material-symbols-rounded" style="vertical-align: middle;">cancel</span> Cancel
-            </a>
-        </div>
+        <div class="card-footer d-flex justify-content-between">
+                    <button type="submit" class="btn btn-gradient-dark btn-sm" style="font-family: 'Inter', sans-serif; color: white;">
+                         Save
+                    </button>
+                    <a href="{{ route('departemen.index') }}" class="btn btn-gradient-dark btn-sm" style="font-family: 'Inter', sans-serif; color: white;">
+                         Cancel
+                    </a>
+                </div>
     </div>
 </form>
 
 <style>
+    .btn-gradient-dark {
+        background-image: linear-gradient(195deg, #42424a 0%, #191919 100%);
+        border: none;
+        padding: 0.375rem 0.75rem; 
+        transition: background-color 0.3s;
+    }
+
+    .btn-gradient-dark:hover {
+        background-image: linear-gradient(195deg, #5a5a5a 0%, #2a2a2a 100%); /* Warna saat hover */
+    }
+
     .card {
         border-radius: 8px; /* Mengatur border radius untuk card */
     }
