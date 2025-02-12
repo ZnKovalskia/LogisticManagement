@@ -18,6 +18,10 @@ use App\Http\Controllers\RoleController;
 |
 */
 
+Route::get('/', function () {
+    return view('frontend.index'); // Load the index view from the frontend folder
+})->name('home');
+
 Route::get('/staff', function () {
     return view('staff');
 })->name('staff');
@@ -39,7 +43,7 @@ Route::get('/dashboard', function () {
 Route::resource('departemen', DepartemenController::class)->middleware('iniLogin');
 Route::resource('role', RoleController::class)->middleware('iniLogin');
 
-Route::get('/', [LoginController::class, 'index'])->name('sesi.login')->middleware('iniTamu');
+// Route::get('/', [LoginController::class, 'index'])->name('sesi.login')->middleware('iniTamu');
 Route::get('sesi/login', [LoginController::class, 'index'])->name('sesi.login')->middleware('iniTamu');
 Route::post('/sesi/login', [LoginController::class, 'login'])->name('sesi.login')->middleware('iniTamu');
 

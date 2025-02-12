@@ -1,21 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-<form action="{{ route('role.store') }}" method="POST">
+<form action="{{ route('departemen.store') }}" method="POST">
     @csrf
     <div class="row">
         <div class="col-12">
             <div class="card my-4">
                 <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                     <div class="bg-gradient-dark shadow-dark border-radius-lg pt-4 pb-3 d-flex justify-content-between align-items-center">
-                        <h6 class="text-white text-capitalize ps-3">Add Role</h6>
+                        <h6 class="text-white text-capitalize ps-3">Add Departemen</h6>
                     </div>
                 </div>
                 <div class="card-body px-4 pb-2">
                     <div class="form-group">
-                        <label for="nama_jabatan" class="form-label">Role Name</label>
-                        <input type="text" class="form-control @error('nama_jabatan') is-invalid @enderror" id="nama_jabatan" name="nama_jabatan" value="{{ old('nama_jabatan') }}" required>
-                        @error('nama_jabatan')
+                        <label for="nama_departemen" class="form-label">Departemen Name</label>
+                        <input type="text" class="form-control @error('nama_departemen') is-invalid @enderror" id="nama_departemen" name="nama_departemen" value="{{ old('nama_departemen') }}" required>
+                        @error('nama_departemen')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
@@ -24,7 +24,7 @@
                     <button type="submit" class="btn btn-gradient-dark btn-sm" style="font-family: 'Inter', sans-serif; color: white;">
                         <span class="material-symbols-rounded me-1">save</span> Save
                     </button>
-                    <a href="{{ route('role.index') }}" class="btn btn-gradient-dark btn-sm" style="font-family: 'Inter', sans-serif; color: white;">
+                    <a href="{{ route('departemen.index') }}" class="btn btn-gradient-dark btn-sm" style="font-family: 'Inter', sans-serif; color: white;">
                         <span class="material-symbols-rounded me-1">cancel</span> Cancel
                     </a>
                 </div>
