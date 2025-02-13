@@ -27,9 +27,7 @@ Route::get('/staff', function () {
     return view('staff');
 })->name('staff');
 
-Route::get('/team', function () {
-    return view('frontend.team');
-})->name('team');
+Route::get('/team', [StaffController::class, 'team'])->name('team');
 
 Route::get('/testimonial', function () {
     return view('frontend.testimonial');

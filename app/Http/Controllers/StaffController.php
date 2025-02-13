@@ -19,6 +19,13 @@ class StaffController extends Controller
         return view('staff.index',['staff'=>$staff]);
     }
 
+    public function team()
+    {
+        //
+        $staff = Staff::all();
+        return view('frontend.team',['staff'=>$staff]);
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -149,7 +156,9 @@ class StaffController extends Controller
     {
         //
         $data = Staff::where('nip',$id)->first();
+        if ($data && File::exists(public_path('foto/' . $data->foto))) {
         File::delete(public_path('foto').'/'.$data->foto);
+        }
 
         Staff::where('nip', $id)->delete();
         return redirect ('staff')->with ('success', 'Pegawai Berhasil Dihapus');
