@@ -33,27 +33,10 @@
 	        <div class="nav-outer">
 	          <nav class="nav main-menu">
 	            <ul class="navigation">
-	              <li class="current"><a href="#">Home</a>
-	              </li>
-	              <li class=""><a href="page-services.html">Services</a>
-	              </li>
-	              <li class="dropdown"><a href="#">Pages</a>
-	                <ul>
-	                  <li><a href="page-about.html">About</a></li>
-	                  <li class=""><a href="{{route('team')}}">Team</a>
-	                  </li>
-	                  <li class="dropdown"><a href="#">Shop</a>
-	                    <ul>
-	                      <li><a href="shop-products.html">Products</a></li>
-	                      <li><a href="shop-cart.html">Cart</a></li>
-	                      <li><a href="shop-checkout.html">Checkout</a></li>
-	                    </ul>
-	                  </li>
-	                  <li><a href="{{route('testimonial')}}">Testimonial</a></li>
-	                  <li><a href="page-pricing.html">Pricing</a></li>
-	                </ul>
-	              </li>
-	              <li><a href="page-contact.html">Contact</a></li>
+	              <li class=""><a href="#home">Home</a></li>
+				  <li class=""><a href="{{route('team')}}">Team</a></li>
+					<li><a href="#testimonial">Testimonial</a></li>
+	              <li><a href="#contact">Contact</a></li>
 	            </ul>
 	          </nav>
 	        </div>
@@ -61,8 +44,6 @@
 
 	        <!-- Outer Box -->
 	        <div class="outer-box">
-	          <!-- Header Search -->
-	          <button class="ui-btn cart-btn"> <i class="icon fa fa-shopping-cart"></i> <span class="count">0</span> </button>
 	          <!-- Header Search -->
 	          <div class="header-search">
 	            <form method="post" action="https://html.kodesolution.com/2024/transfox-html/index.html">
@@ -157,3 +138,49 @@
 	    </div>
 	    <!-- End Sticky Menu -->
 	</header>
+
+	<script>
+document.addEventListener("DOMContentLoaded", function () {
+    let navLinks = document.querySelectorAll(".navigation li a");
+
+    navLinks.forEach(link => {
+        link.addEventListener("click", function () {
+            // Hapus class active dari semua menu
+            navLinks.forEach(nav => nav.parentElement.classList.remove("active"));
+
+            // Tambahkan class active ke menu yang diklik
+            this.parentElement.classList.add("active");
+        });
+    });
+});
+</script>
+
+
+	<style>
+		html {
+    			scroll-behavior: smooth;
+			}
+			.navigation li a {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.navigation li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color:rgb(255, 0, 0); /* Warna garis */
+    transition: width 0.3s ease-in-out;
+}
+
+.navigation li a:hover::after,
+.navigation li.active a::after {
+    width: 100%;
+}
+
+	</style>
