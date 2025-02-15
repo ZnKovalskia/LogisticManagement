@@ -16,20 +16,20 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link {{ request()->routeIs('barang') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ route('barang.index') }}">
+                    <i class="material-symbols-rounded opacity-5">inventory_2</i>
+                    <span class="nav-link-text ms-1">Stok Barang</span>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link {{ request()->routeIs('staff') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ route('staff.index') }}">
                     <i class="material-symbols-rounded opacity-5">table_view</i>
                     <span class="nav-link-text ms-1">Staff</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link {{ request()->routeIs('barang') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ route('barang.index') }}">
-                    <i class="material-symbols-rounded opacity-5">table_view</i>
-                    <span class="nav-link-text ms-1">Stok Barang</span>
-                </a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link {{ request()->routeIs('testimonial') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ route('testimonial.index') }}">
-                    <i class="material-symbols-rounded opacity-5">table_view</i>
+                    <i class="material-symbols-rounded opacity-5">mail</i>
                     <span class="nav-link-text ms-1">Testimoni Masuk</span>
                 </a>
             </li>
@@ -41,8 +41,8 @@
                     <span class="nav-link-text ms-1">Input</span>
                     </a>
                     <ul class="collapse list-unstyled" id="submenuLogistik">
-                        <li><a class="nav-link text-dark" href="{{route('ibarang.index')}}">Stock</a></li>
-                        <li><a class="nav-link text-dark" href="{{route('departemen.index')}}">Departemen</a></li>
+                        <!--<li><a class="nav-link text-dark" href="{{route('ibarang.index')}}">Stock</a></li>-->
+                        <!--<li><a class="nav-link text-dark" href="{{route('departemen.index')}}">Departemen</a></-->li>
                         <li><a class="nav-link text-dark" href="{{route('role.index')}}">Role</a></li>
                  </ul>
                 </li>

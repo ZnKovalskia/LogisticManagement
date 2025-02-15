@@ -61,7 +61,7 @@
                                 </div>
                                 <div class="text">
                                     <h6 class="mb-1">Kirim email</h6>
-                                    <a href="https://html.kodesolution.com/cdn-cgi/l/email-protection#78161d1d1c101d1408381b171508191601561b1715"><span class="__cf_email__" data-cfemail="1f717a7a7b777a736f5f7c70726f7e7166317c7072">Transfox@gmail.com</span></a>
+                                    <a href="https://html.kodesolution.com/cdn-cgi/l/email-protection#78161d1d1c101d1408381b171508191601561b1715"><span class="__cf_email__" data-cfemail="1f717a7a7b777a736f5f7c70726f7e7166317c7072">onigen.demon@gmail.com</br> indragoldy105@gmail.com</span></a>
                                 </div>
                             </li>
                             <li>

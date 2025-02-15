@@ -22,31 +22,16 @@
 	              <h5 class="widget-title">Quick Links</h5>
 	              <div class="widget-content">
 	                <ul class="user-links">
-	                  <li><a href="#"><i class="fa fa-solid fa-angle-right"></i> Home</a></li>
-	                  <li><a href="#"><i class="fa fa-solid fa-angle-right"></i> Services</a></li>
-	                  <li><a href="#"><i class="fa fa-solid fa-angle-right"></i> About Us</a></li>
-	                  <li><a href="#"><i class="fa fa-solid fa-angle-right"></i> Blog</a></li>
-	                  <li><a href="#"><i class="fa fa-solid fa-angle-right"></i> Contact</a></li>
+	                  <li><a href="#home"><i class="fa fa-solid fa-angle-right"></i> Home</a></li>
+	                  <li><a href="#team"><i class="fa fa-solid fa-angle-right"></i> Team</a></li>
+	                  <li><a href="#testimonial"><i class="fa fa-solid fa-angle-right"></i> Testimonial</a></li>
+	                  <li><a href="#contact"><i class="fa fa-solid fa-angle-right"></i> Contact</a></li>
 	                </ul>
 	              </div>
 	            </div>
 	          </div>
 	          
 	          <!-- Footer Column -->
-	          <div class="footer-column col-lg-2 col-md-6 col-sm-6">
-	            <div class="footer-widget links-widget">
-	              <h5 class="widget-title">Services</h5>
-	              <div class="widget-content">
-	                <ul class="user-links">
-	                  <li><a href="#"><i class="fa fa-solid fa-angle-right"></i> Air Fright</a></li>
-	                  <li><a href="#"><i class="fa fa-solid fa-angle-right"></i> Ocean Fright</a></li>
-	                  <li><a href="#"><i class="fa fa-solid fa-angle-right"></i> Road Fright</a></li>
-	                  <li><a href="#"><i class="fa fa-solid fa-angle-right"></i> Warehouse</a></li>
-	                  <li><a href="#"><i class="fa fa-solid fa-angle-right"></i> Transport</a></li>
-	                </ul>
-	              </div>
-	            </div>
-	          </div>
 	          
 	          <!-- Footer Column -->
 	          <div class="footer-column col-lg-3 col-md-6 col-sm-12">

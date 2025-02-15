@@ -41,6 +41,57 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Modal Tambah Stok -->
+<div class="modal fade" id="modalTambahStok" tabindex="-1" aria-labelledby="modalTambahLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTambahLabel">Tambah Stok Barang</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="formTambahStok" method="POST">
+                    @csrf
+                    <input type="hidden" name="barang_id" id="barang_id">
+                    <div class="mb-3">
+                        <label for="jumlah" class="form-label">Jumlah:</label>
+                        <input type="number" name="jumlah" id="jumlah" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Tambah Stok</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Kurangi Stok -->
+<div class="modal fade" id="kurangModal" tabindex="-1" aria-labelledby="kurangModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="kurangModalLabel">Kurangi Stok Barang</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="kurangForm">
+                    @csrf
+                    <input type="hidden" id="kurangBarangId">
+                    <div class="mb-3">
+                        <label for="kurangJumlah" class="form-label">Jumlah:</label>
+                        <input type="number" id="kurangJumlah" name="jumlah" class="form-control" min="1" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                        <button type="submit" class="btn btn-danger">Kurangi Stok</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 </head>
 </body>
 </html>

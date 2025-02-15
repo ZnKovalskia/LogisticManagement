@@ -26,7 +26,7 @@
 	      <!-- Main box -->
 	      <div class="main-box">
 	        <div class="logo-box">
-	          <div class="logo"><a href="index-2.html"><img src="images/logo-2.png" alt="Logo" title="Transtex"></a></div>
+	          <div class="logo"><a href="{{route('home')}}"><img src="images/logo-2.png" alt="Logo" title="Transtex"></a></div>
 	        </div>
 
 	        <!--Nav Box-->
@@ -44,15 +44,6 @@
 
 	        <!-- Outer Box -->
 	        <div class="outer-box">
-	          <!-- Header Search -->
-	          <div class="header-search">
-	            <form method="post" action="https://html.kodesolution.com/2024/transfox-html/index.html">
-	              <div class="form-group">
-	                <input type="text" name="search-field" value="" placeholder="Search" required="">
-	                <button type="submit" class="icon"><i class="fa fa-search"></i></button>
-	              </div>
-	            </form>
-	          </div>
 	          <!-- Info Btn -->
 	          <div class="btn-box">
 	            <!-- Info Btn -->
@@ -70,7 +61,7 @@
 	      <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
 	      <nav class="menu-box">
 	        <div class="upper-box">
-	          <div class="nav-logo"><a href="index-2.html"><img src="images/logo.png" alt="" title=""></a></div>
+	          <div class="nav-logo"><a href="{{route('home')}}"><img src="images/logo.png" alt="" title=""></a></div>
 	          <div class="close-btn"><i class="icon fa fa-times"></i></div>
 	        </div>
 	        <ul class="navigation clearfix">
@@ -97,26 +88,12 @@
 	    </div>
 	    <!-- End Mobile Menu -->
 
-	    <!-- Header Search -->
-	    <div class="search-popup"> <span class="search-back-drop"></span>
-	      <button class="close-search"><span class="fa fa-times"></span></button>
-	      <div class="search-inner">
-	        <form method="post" action="https://html.kodesolution.com/2024/transfox-html/index.html">
-	          <div class="form-group">
-	            <input type="search" name="search-field" value="" placeholder="Search..." required="">
-	            <button type="submit"><i class="fa fa-search"></i></button>
-	          </div>
-	        </form>
-	      </div>
-	    </div>
-	    <!-- End Header Search -->
-
 	    <!-- Sticky Header  -->
 	    <div class="sticky-header">
 	      <div class="auto-container">
 	        <div class="inner-container">
 	          <!--Logo-->
-	          <div class="logo"> <a href="index-2.html" title=""><img src="images/logo-2.png" alt="" title=""></a> </div>
+	          <div class="logo"> <a href="#home" title=""><img src="images/logo-2.png" alt="" title=""></a> </div>
 
 	          <!--Right Col-->
 	          <div class="nav-outer">

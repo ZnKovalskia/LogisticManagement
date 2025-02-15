@@ -78,6 +78,8 @@ class BarangController extends Controller
         return redirect()->route('barang.index')->with('success', 'Barang berhasil ditambahkan');
     }
 
+    
+
     /**
      * Display the specified resource.
      */
@@ -136,6 +138,40 @@ class BarangController extends Controller
         return redirect()->route('barang.index')->with('success', 'Barang berhasil diperbarui');
     }
 
+    public function updateTambahAjax(Request $request, $id)
+{
+    $barang = Barang::findOrFail($id);
+
+    $request->validate([
+        'jumlah' => 'required|integer|min:1'
+    ]);
+
+    $jumlah = $request->input('jumlah');
+
+    // Tambah stok barang
+    $barang->barang_masuk += $jumlah;
+    $barang->quantity += $jumlah;
+    $barang->save();
+
+    // Simpan ke laporan
+    Laporan::create([
+        'kode_barang' => $barang->kode_barang,
+        'nama_barang' => $barang->nama_barang,
+        'jumlah' => $jumlah,
+        'jenis_laporan' => 'masuk',
+    ]);
+
+    // Kirim respons JSON agar AJAX bisa menampilkan notifikasi tanpa reload
+    return response()->json([
+        'success' => true,
+        'message' => 'Stok berhasil ditambahkan!',
+        'new_quantity' => $barang->quantity
+    ]);
+}
+
+
+    
+
     /**
      * Remove the specified resource from storage.
      */
@@ -186,21 +222,45 @@ class BarangController extends Controller
     }
 
     public function updateKurang(Request $request, $id)
-    {
-        $barang = Barang::findOrFail($id);
-        $jumlah = $request->input('jumlah');
+{
+    $barang = Barang::findOrFail($id);
 
-        $barang->barang_keluar += $request->input('jumlah');
-        $barang->quantity -= $request->input('jumlah');
-        $barang->save();
+    $request->validate([
+        'jumlah' => 'required|integer|min:1'
+    ]);
 
-        Laporan::create([
-            'kode_barang' => $barang->kode_barang,
-            'nama_barang' => $barang->nama_barang,
-            'jumlah' => $jumlah,
-            'jenis_laporan' => 'keluar',
-        ]);
+    $jumlah = $request->input('jumlah');
 
-        return redirect()->route('barang.index')->with('success', 'Stok barang berhasil dikurangi');
+    // Cek apakah stok cukup untuk dikurangi
+    if ($barang->quantity < $jumlah) {
+        return response()->json([
+            'success' => false,
+            'message' => 'Stok tidak mencukupi!'
+        ], 400);
     }
+
+    // Kurangi stok barang
+    $barang->barang_keluar += $jumlah;
+    $barang->quantity -= $jumlah;
+    $barang->save();
+
+    // Simpan ke laporan
+    Laporan::create([
+        'kode_barang' => $barang->kode_barang,
+        'nama_barang' => $barang->nama_barang,
+        'jumlah' => $jumlah,
+        'jenis_laporan' => 'keluar',
+    ]);
+
+    // Cek apakah request dari AJAX
+    if ($request->ajax()) {
+        return response()->json([
+            'success' => true,
+            'message' => 'Stok berhasil dikurangi!',
+            'new_quantity' => $barang->quantity
+        ]);
+    }
+
+    return redirect()->route('barang.index')->with('success', 'Stok barang berhasil dikurangi');
+}
 }

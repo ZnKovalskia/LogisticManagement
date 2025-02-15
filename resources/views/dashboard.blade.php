@@ -4,7 +4,7 @@
     <div class="row">
         <div class="ms-3">
             <h3 class="mb-0 h4 font-weight-bolder">Dashboard</h3>
-            <p class="mb-4">Check the sales, value and bounce rate by country.</p>
+            <p class="mb-4">All the data on the website will appear here.</p>
         </div>
     </div>
     <div class="row"> <!-- Tambahkan row di sini -->
@@ -36,7 +36,7 @@
                             <h4 class="mb-0 text-success font-weight-bolder">{{ $totalBarangMasuk }}</h4>
                         </div>
                         <div class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
-                            <i class="material-symbols-rounded opacity-10">inventory</i>
+                            <i class="material-symbols-rounded opacity-10">package_2</i>
                         </div>
                     </div>
                 </div>
@@ -55,7 +55,7 @@
                             <h4 class="mb-0 text-danger font-weight-bolder">{{ $totalBarangKeluar }}</h4>
                         </div>
                         <div class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
-                            <i class="material-symbols-rounded opacity-10">leaderboard</i>
+                            <i class="material-symbols-rounded opacity-10">delivery_truck_speed</i>
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                             <h4 class="mb-0">{{ $totalTestimoni }}</h4>
                         </div>
                         <div class="icon icon-md icon-shape bg-gradient-dark shadow-dark shadow text-center border-radius-lg">
-                            <i class="material-symbols-rounded opacity-10">weekend</i>
+                            <i class="material-symbols-rounded opacity-10">mail</i>
                         </div>
                     </div>
                 </div>

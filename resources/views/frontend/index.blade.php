@@ -39,7 +39,7 @@
 		<div class="banner-carousel owl-carousel owl-theme">
 			<!-- Slide Item -->
 			<div class="slide-item">
-				<div class="bg-image" style="background-image: url(images/background/istrigwe.jpg);"></div>
+				<div class="bg-image" style="background-image: url(images/main-slider/s1-1.jpg);"></div>
 				<div class="shape-1 animate-2"></div>
 				<div class="shape-2"></div>
 				<div class="shape-3 animate-3"></div>
@@ -47,17 +47,17 @@
 				<div class="pattern-5 bounce-y"></div>
 				<div class="auto-container">
 					<div class="content-box">
-						<div class="inner-content">
-							<span class="sub-title animate-2"><span class="inner">Website Stok Barang Logistik</span></span>
-							<h1 class="title animate-3">100% cepat <br />solusi <br />logistik</h1>
+					<div class="inner-content">
+					<span class="sub-title animate-2"><span class="inner">Secure & Reliable shipping around the world</span></span>
+					<h1 class="title animate-3">100% fastest <br />logistic & transport <br />solution</h1>
+						</div>	
 
-						</div>
 					</div>
 				</div>
 			</div>
 			<!-- Slide Item -->
 			<div class="slide-item">
-				<div class="bg-image" style="background-image: url(images/background/hehe.jpg);"></div>
+				<div class="bg-image" style="background-image: url(images/background/Gudang.webp);"></div>
 				<div class="shape-1 animate-2"></div>
 				<div class="shape-2 wow fadeInRight" data-wow-delay="300ms"></div>
 				<div class="shape-3 wow fadeInLeft" data-wow-delay="600ms"></div>
@@ -66,8 +66,8 @@
 				<div class="auto-container">
 					<div class="content-box">
 						<div class="inner-content">
-							<span class="sub-title animate-1"><span class="inner">Website Stok Barang Logistik</span></span>
-							<h1 class="title animate-2">Buatan <br />Indra <br />Goldy</h1>
+						<span class="sub-title animate-1"><span class="inner">Secure & Reliable shipping around the world</span></span>
+						<h1 class="title animate-2">100% fastest <br />logistic & transport <br />solution</h1>
 							
 						</div>
 					</div>
@@ -95,15 +95,15 @@
 					<div class="service-block wow fadeInUp">
 						<div class="inner-box">
 							<div class="image-box">
-								<figure class="image"><a href="page-service-details.html"><img src="{{ url('foto/' . $item->foto) }}" alt="Foto Barang"></a></figure>
-								<div class="icon-box"><i class="icon flaticon-delivery-truck-4"></i></div>
+								<figure class="image"><a href="#"><img src="{{ url('foto/' . $item->foto) }}" alt="Foto Barang"></a></figure>
+							
 							</div>
 							<div class="content-box">
-								<h4 class="title"><a href="page-service-details.html">{{ $item->nama_barang }}</a></h4>
+								<h4 class="title"><a href="#">{{ $item->nama_barang }}</a></h4>
 								<div class="inner">
 									<div class="text"><p>Produk Ini memiliki stok</p>{{ $item->quantity }}</div>
 								</div>
-								<a href="page-service-details.html" class="read-more"><i class="icon fa fa-arrow-right"></i></a>
+								<a href="#" class="read-more"><i class="#"></i></a>
 							</div>
 						</div>
 					</div>
@@ -114,30 +114,28 @@
 	</section>
 	<!-- End Barang Section-->
 
-	<!-- Fun Fact Section -->
-	<section class="fun-fact-section" style="background-image: url(images/background/bg-fun-fact-1.jpg)">
-	    <div class="auto-container">
-	      <div class="fact-counter">
-	        <div class="row">
+		<!-- Fun Fact Section -->
+<section class="fun-fact-section" style="background-image: url(images/background/bg-fun-fact-1.jpg)">
+    <div class="auto-container">
+      <div class="fact-counter">
+        <div class="row justify-content-center"> <!-- Menengahkan elemen -->
 
-	          <!-- Counter block-->
-	          <div class="counter-block col-lg-4 col-sm-6 wow fadeInUp">
-	            <div class="inner-box">
-	              <div class="icon-box"><i class="icon flaticon-logistics"></i></div>
-	              <div class="content-box">
-	                <div class="count-box"><span class="count-text" data-speed="3000" data-stop="{{ $totalBarang }}">0</span>+</div>
-	                <div class="counter-title">Seluruh Stok Barang</div>
-	              </div>
-	            </div>
-	          </div>
+          <!-- Counter block-->
+          <div class="counter-block col-lg-4 col-sm-6 d-flex justify-content-center wow fadeInUp">
+            <div class="inner-box text-center">
+              <div class="icon-box"><i class="icon flaticon-logistics"></i></div>
+              <div class="content-box">
+                <div class="count-box"><span class="count-text" data-speed="3000" data-stop="{{ $totalBarang }}">0</span>+</div>
+                <div class="counter-title">Seluruh Stok Barang</div>
+              </div>
+            </div>
+          </div>
 
-	          
-	          </div>
-	        </div>
-	      </div>
-	    </div>
-	</section>
-	<!-- End Fun Fact Section -->
+        </div>
+      </div>
+    </div>
+</section>
+<!-- End Fun Fact Section -->
 
 
 
@@ -209,7 +207,17 @@
 <script src="js/swiper.min.js"></script>
 <script src="js/owl.js"></script>
 <script src="js/script.js"></script>
+<style>
+	    .counter-block .count-box {
+        text-align: center;
+        font-size: 2rem;
+        font-weight: bold;
+        display: block;
+    }
+</style>
 </body>
+
+
 
 <!-- Mirrored from html.kodesolution.com/2024/transfox-html/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 10 Feb 2025 07:05:13 GMT -->
 </html>

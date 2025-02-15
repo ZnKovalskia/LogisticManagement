@@ -76,3 +76,9 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::post('/kirim-testimoni', [TestimoniController::class, 'store'])->name('testimoni.store');
 
+Route::post('/barang/updateTambahAjax/{id}', [BarangController::class, 'updateTambahAjax'])->name('barang.updateTambahAjax');
+Route::post('/barang/updateKurang/{id}', [BarangController::class, 'updateKurang'])->name('barang.updateKurang');
+
+
+
+
