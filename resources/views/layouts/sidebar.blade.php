@@ -21,6 +21,18 @@
                     <span class="nav-link-text ms-1">Staff</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link {{ request()->routeIs('barang') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ route('barang.index') }}">
+                    <i class="material-symbols-rounded opacity-5">table_view</i>
+                    <span class="nav-link-text ms-1">Stok Barang</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ request()->routeIs('testimonial') ? 'active bg-gradient-dark text-white' : 'text-dark' }}" href="{{ route('testimonial.index') }}">
+                    <i class="material-symbols-rounded opacity-5">table_view</i>
+                    <span class="nav-link-text ms-1">Testimoni Masuk</span>
+                </a>
+            </li>
             <ul class="nav flex-column">
             <!-- Menu Utama -->
                 <li class="nav-item">
@@ -29,7 +41,7 @@
                     <span class="nav-link-text ms-1">Input</span>
                     </a>
                     <ul class="collapse list-unstyled" id="submenuLogistik">
-                        <li><a class="nav-link text-dark" href="{{route('dashboard')}}">Stock</a></li>
+                        <li><a class="nav-link text-dark" href="{{route('ibarang.index')}}">Stock</a></li>
                         <li><a class="nav-link text-dark" href="{{route('departemen.index')}}">Departemen</a></li>
                         <li><a class="nav-link text-dark" href="{{route('role.index')}}">Role</a></li>
                  </ul>

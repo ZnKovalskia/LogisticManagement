@@ -56,7 +56,7 @@
 	          <!-- Info Btn -->
 	          <div class="btn-box">
 	            <!-- Info Btn -->
-	            <a href="tel:+3655540069" class="info-btn-two"> <i class="icon fa fa-phone"></i> <small>Make a Call</small> <strong>+36 55 540 069</strong> </a>
+	            <a href="tel:+6287844417321" class="info-btn-two"> <i class="icon fa fa-phone"></i> <small>Make a Call</small> <strong>+6287844417321</strong> </a>
 	          </div>
 	          <!-- Mobile Nav toggler -->
 	          <div class="mobile-nav-toggler"><span class="icon lnr-icon-bars"></span></div>

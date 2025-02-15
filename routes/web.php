@@ -7,6 +7,9 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DepartemenController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\StaffController;
+use App\Http\Controllers\TestimoniController;
+use App\Http\Controllers\BarangController;
+use App\Http\Controllers\IBarangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +22,9 @@ use App\Http\Controllers\StaffController;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.index'); // Load the index view from the frontend folder
-})->name('home');
+Route::get('/', [TestimoniController::class, 'index'])->name('home');
+
+Route::get('/', [BarangController::class, 'barangFront'])->name('home');
 
 Route::get('/staff', function () {
     return view('staff');
@@ -29,9 +32,8 @@ Route::get('/staff', function () {
 
 Route::get('/team', [StaffController::class, 'team'])->name('team');
 
-Route::get('/testimonial', function () {
-    return view('frontend.testimonial');
-})->name('testimonial');
+Route::get('/testimonial', [TestimoniController::class, 'admin'])->name('testimonial.index');
+
 
 Route::get('/profile', function () {
     return view('profile');
@@ -46,14 +48,22 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard')->middleware('iniLogin');
 
+Route::get('/dashboard', [BarangController::class, 'barang'])->name('dashboard')->middleware('iniLogin');
 
 Route::resource('departemen', DepartemenController::class)->middleware('iniLogin');
 Route::resource('role', RoleController::class)->middleware('iniLogin');
+Route::resource('ibarang', IbarangController::class)->middleware('iniLogin');
 Route::resource('staff', StaffController::class)->parameters([
     'staff' => 'nip'
-]);
+])->middleware('iniLogin');
 
+Route::resource('barang', BarangController::class);
 
+Route::get('barang/{id}/tambah', [BarangController::class, 'tambah'])->name('barang.tambah');
+Route::post('barang/{id}/updateTambah', [BarangController::class, 'updateTambah'])->name('barang.updateTambah');
+
+Route::get('barang/{id}/kurang', [BarangController::class, 'kurang'])->name('barang.kurang');
+Route::post('barang/{id}/updateKurang', [BarangController::class, 'updateKurang'])->name('barang.updateKurang');
 
 // Route::get('/', [LoginController::class, 'index'])->name('sesi.login')->middleware('iniTamu');
 Route::get('sesi/login', [LoginController::class, 'index'])->name('sesi.login')->middleware('iniTamu');
@@ -63,3 +73,6 @@ Route::get('sesi/register', [RegisterController::class, 'index'])->name('sesi.re
 Route::post('/sesi/register', [RegisterController::class, 'store'])->name('sesi.register')->middleware('iniTamu');
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::post('/kirim-testimoni', [TestimoniController::class, 'store'])->name('testimoni.store');
+

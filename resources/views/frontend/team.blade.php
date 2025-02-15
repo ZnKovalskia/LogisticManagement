@@ -48,12 +48,6 @@
 								<div class="info-box">
 									<h4 class="name"><a href="page-team-details.html">{{ $item->nama_pegawai }}</a></h4>
 									<span class="designation">{{ $item->role['nama_jabatan'] }}</span>
-									<div class="social-links">
-										<a href="#"><i class="fab fa-twitter"></i></a>
-										<a href="#"><i class="fab fa-facebook-f"></i></a>
-										<a href="#"><i class="fab fa-pinterest-p"></i></a>
-										<a href="#"><i class="fab fa-instagram"></i></a>
-									</div>
 									<span class="share-icon fa fa-share-alt"></span>
 								</div>
 							</div>

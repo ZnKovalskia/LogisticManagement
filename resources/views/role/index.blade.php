@@ -17,8 +17,8 @@
                         <table class="table align-items-center mb-0">
                             <thead>
                                 <tr>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
-                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Role Name</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Role Name</th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Actions</th>
                                 </tr>
                             </thead>
@@ -26,11 +26,12 @@
                                 <?php $no = 1 ?>
                                 @foreach($role as $index => $role)
                                     <tr>
-                                        <td class="text-center">
-                                            <h6 class="mb-0 text-sm">{{$no++}}</h6>
-                                        </td>
-                                        <td>
-                                            <h6 class="mb-0 text-sm">{{ $role->nama_jabatan }}</h6>
+                                        <td class="align-middle text-center text-sm">
+                                                <p class="text-xs font-weight-bold mb-0">{{$no++}}</p>
+                                            </td>
+                                            <td class="align-middle text-center text-sm">
+                                                <p class="text-xs font-weight-bold mb-0">{{ $role->nama_jabatan }}</p>
+                                            </td>
                                         </td>
                                         <td class="align-middle text-center">
                                             <a href="{{ route('role.edit', $role->id) }}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit role">
