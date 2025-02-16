@@ -22,7 +22,6 @@ use App\Http\Controllers\IBarangController;
 |
 */
 
-Route::get('/', [TestimoniController::class, 'index'])->name('home');
 
 Route::get('/', [BarangController::class, 'barangFront'])->name('home');
 

@@ -42,7 +42,8 @@ class BarangController extends Controller
     {
         $barang = Barang::all();
         $totalBarang = Barang::sum('quantity');
-        return view('frontend.index', compact('barang', 'totalBarang'));
+        $testimoni = Testimoni::all();
+        return view('frontend.index', compact('barang', 'totalBarang', 'testimoni'));
     } 
 
     public function create()

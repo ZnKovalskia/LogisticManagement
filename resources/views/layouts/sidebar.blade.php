@@ -42,7 +42,7 @@
                     </a>
                     <ul class="collapse list-unstyled" id="submenuLogistik">
                         <!--<li><a class="nav-link text-dark" href="{{route('ibarang.index')}}">Stock</a></li>-->
-                        <!--<li><a class="nav-link text-dark" href="{{route('departemen.index')}}">Departemen</a></-->li>
+                        <!--<li><a class="nav-link text-dark" href="{{route('departemen.index')}}">Departemen</a></li>-->
                         <li><a class="nav-link text-dark" href="{{route('role.index')}}">Role</a></li>
                  </ul>
                 </li>
