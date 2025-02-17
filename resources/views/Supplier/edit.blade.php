@@ -1,18 +1,18 @@
 @extends('layout.app')
 
 @section('content')
-<form action="{{ url('departemen/' . $data->id) }}" method="POST" style="max-width: 600px; margin: auto;">
+<form action="{{ url('supplier/' . $data->id) }}" method="POST" style="max-width: 600px; margin: auto;">
     @csrf
     @method('PUT')
     <div class="card" style="border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); margin: 20px 0;">
         <div class="card-header" style="background-color: #42424a; color: white; padding: 15px; border-top-left-radius: 8px; border-top-right-radius: 8px;">
-            <h6 style="margin: 0;">Edit Departemen</h6>
+            <h6 style="margin: 0;">Edit Supplier</h6>
         </div>
         <div class="card-body" style="padding: 20px;">
             <div class="form-group" style="margin-bottom: 15px;">
-                <label for="nama_departemen" style="font-weight: bold;">Departemen Name</label>
-                <input type="text" class="form-control" id="nama_departemen" name="nama_departemen" value="{{ old('nama_departemen', $data->nama_departemen) }}" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
-                @error('nama_departemen')
+                <label for="nama_supplier" style="font-weight: bold;">Supprlier Name</label>
+                <input type="text" class="form-control" id="nama_supplier" name="nama_supplier" value="{{ old('nama_supplier', $data->nama_supplier) }}" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                @error('supplier')
                     <div style="color: red; margin-top: 5px;">{{ $message }}</div>
                 @enderror
             </div>
@@ -21,7 +21,7 @@
                     <button type="submit" class="btn btn-gradient-dark btn-sm" style="font-family: 'Inter', sans-serif; color: white;">
                          Save
                     </button>
-                    <a href="{{ route('departemen.index') }}" class="btn btn-gradient-dark btn-sm" style="font-family: 'Inter', sans-serif; color: white;">
+                    <a href="{{ route('supplier.index') }}" class="btn btn-gradient-dark btn-sm" style="font-family: 'Inter', sans-serif; color: white;">
                          Cancel
                     </a>
                 </div>

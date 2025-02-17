@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('kode_barang')->unique();
             $table->string('nama_barang');
+            $table->string('supplier_id');
             $table->integer('barang_masuk')->default(0);
             $table->integer('barang_keluar')->default(0);
             $table->integer('quantity')->default(0);

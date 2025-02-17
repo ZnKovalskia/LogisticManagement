@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Departemen;
+use App\Models\supplier;
 use Illuminate\Http\Request;
 
-class DepartemenController extends Controller
+class SupplierController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +13,8 @@ class DepartemenController extends Controller
     public function index()
     {
         //
-        $departemen = Departemen::all();
-        return view('departemen.index', ['departemen'=>$departemen]);
+        $supplier = supplier::all();
+        return view('supplier.index', ['supplier'=>$supplier]);
     }
 
     /**
@@ -23,7 +23,7 @@ class DepartemenController extends Controller
     public function create()
     {
         //
-        return view ('departemen.create');
+        return view('supplier.create');
     }
 
     /**
@@ -32,21 +32,20 @@ class DepartemenController extends Controller
     public function store(Request $request)
     {
         //
-        //
         $request->validate([
-            'nama_departemen' => 'required',
+            'nama_supplier' => 'required',
         ]);
-        Departemen::create ([
-            'nama_departemen' => $request->nama_departemen,
+        Supplier::create ([
+            'nama_supplier' => $request->nama_supplier,
         ]);
 
-        return redirect ('departemen')->with ('success', 'Departemen Berhasil Ditambahkan');
+        return redirect ('supplier')->with ('success', 'Supplier Berhasil Ditambahkan');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(departemen $departemen)
+    public function show(supplier $supplier)
     {
         //
     }
@@ -57,8 +56,8 @@ class DepartemenController extends Controller
     public function edit($id)
     {
         //
-        $data = Departemen::where('id', $id)->first();
-        return view('departemen.edit')->with('data', $data);
+        $data = Supplier::where('id', $id)->first();
+        return view('supplier.edit')->with('data', $data);
     }
 
     /**
@@ -68,14 +67,14 @@ class DepartemenController extends Controller
     {
         //
         $request->validate([
-            'nama_departemen' => 'required',
+            'nama_supplier' => 'required',
         ]);
         $data = ([
-            'nama_departemen' => $request->nama_departemen,
+            'nama_supplier' => $request->nama_supplier,
         ]);
 
-        Departemen::where('id', $id)->update($data);
-        return redirect ('departemen')->with ('success', 'Departemen Berhasil Dirubah');
+        Supplier::where('id', $id)->update($data);
+        return redirect ('supplier')->with ('success', 'Supplier Berhasil Dirubah');
     }
 
     /**
@@ -84,7 +83,7 @@ class DepartemenController extends Controller
     public function destroy($id)
     {
         //
-        Departemen::where('id',$id)->delete();
-        return redirect('departemen')->with('success', 'Departemen Berhasil Dihapus');
+        Supplier::where('id',$id)->delete();
+        return redirect('supplier')->with('success', 'Supplier Berhasil Dihapus');
     }
 }

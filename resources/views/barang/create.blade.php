@@ -24,6 +24,15 @@
                     </div>
 
                     <div class="form-group">
+                        <label class="form-label">Nama Supplier</label>
+                            <select name="supplier_id" class="custom-select">
+                                        @foreach ($supplier as $item)
+                                        <option value="{{$item->id}}">{{$item->nama_supplier}}</option>
+                                        @endforeach
+                                    </select>
+                    </div>
+
+                    <div class="form-group">
                         <label class="form-label">Stok</label>
                         <input type="number" class="form-control" name="quantity" required min="0" placeholder="0">
                     </div>
@@ -46,10 +55,14 @@
 
                     <!-- Tombol Submit -->
                     <div class="card-footer d-flex justify-content-between">
-                        <button type="submit" class="btn btn-gradient-dark btn-sm" style="font-family: 'Inter', sans-serif; color: white;">
-                        <span class="material-symbols-rounded me-1">save</span> Save
-                        </button>
+                            <button type="submit" class="btn btn-gradient-dark btn-sm" style="font-family: 'Inter', sans-serif; color: white;">
+                                    <span class="material-symbols-rounded me-1">save</span> Save
+                            </button>
+                            <a href="{{ route('barang.index') }}" class="btn btn-gradient-dark btn-sm ms-auto" style="font-family: 'Inter', sans-serif; color: white;">
+                                <span class="material-symbols-rounded me-1">cancel</span> Cancel
+                            </a>
                     </div>
+
 
                     <!-- Pesan Error -->
                     @if ($errors->any())

@@ -118,7 +118,7 @@
 <section class="fun-fact-section" style="background-image: url(images/background/bg-fun-fact-1.jpg)">
     <div class="auto-container">
       <div class="fact-counter">
-        <div class="row justify-content-center"> <!-- Menengahkan elemen -->
+        <div class="row justify-content-center">
 
           <!-- Counter block-->
           <div class="counter-block col-lg-4 col-sm-6 d-flex justify-content-center wow fadeInUp">
@@ -163,11 +163,11 @@
 		  <div class="sponsors-outer"> 
 		    <!--clients carousel-->
 		    <ul class="clients-carousel owl-carousel owl-theme disable-navs">
-		      <li class="client-block"> <a href="#" class="image"> <img src="images/clients/1.png" alt="Image"> <img src="images/clients/1-1.png" alt="Image"> </a> </li>
-		      <li class="client-block"> <a href="#" class="image"> <img src="images/clients/2.png" alt="Image"> <img src="images/clients/2-1.png" alt="Image"> </a> </li>
-		      <li class="client-block"> <a href="#" class="image"> <img src="images/clients/3.png" alt="Image"> <img src="images/clients/3-1.png" alt="Image"> </a> </li>
-		      <li class="client-block"> <a href="#" class="image"> <img src="images/clients/4.png" alt="Image"> <img src="images/clients/4-1.png" alt="Image"> </a> </li>
-		      <li class="client-block"> <a href="#" class="image"> <img src="images/clients/5.png" alt="Image"> <img src="images/clients/5-1.png" alt="Image"> </a> </li>
+		      <li class="client-block"> <a href="https://webex.smknegeri1garut.sch.id" class="image"> <img src="images/clients/smea.png" alt="Image"> <img src="images/clients/smea-1.jpg" alt="Image"> </a> </li>
+		      <li class="client-block"> <a href="#" class="image"> <img src="images/clients/aranara.jpg" alt="Image"> <img src="images/clients/aranara-1.jpg" alt="Image"> </a> </li>
+		      <li class="client-block"> <a href="#" class="image"> <img src="images/clients/uchiha.jpg" alt="Image"> <img src="images/clients/uchiha-1.jpg" alt="Image"> </a> </li>
+		      <li class="client-block"> <a href="#" class="image"> <img src="images/clients/nasa.png" alt="Image"> <img src="images/clients/nasa-1.png" alt="Image"> </a> </li>
+		      <li class="client-block"> <a href="#" class="image"> <img src="images/clients/spacex.png" alt="Image"> <img src="images/clients/spacex-1.jpg" alt="Image"> </a> </li>
 		    </ul>
 		  </div>
 		</div>

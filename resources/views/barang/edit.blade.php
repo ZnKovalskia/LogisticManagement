@@ -12,7 +12,7 @@
         </div>
     @endif
 
-    <form action="{{ route('barang.update', $barang->id) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ url('barang/' . $data->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')
 
@@ -23,7 +23,18 @@
             <div class="card-body">
                 <div class="mb-3">
                     <label for="nama_barang" class="form-label">Nama Barang</label>
-                    <input type="text" name="nama_barang" id="nama_barang" class="form-control" value="{{ $barang->nama_barang }}" required>
+                    <input type="text" name="nama_barang" id="nama_barang" class="form-control" value="{{ $data->nama_barang }}" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Supplier</label>
+                    <select name="supplier_id" class="custom-select">
+                        @foreach ($supplier as $item)
+                            <option value="{{ $item->id }}" {{ $data->supplier_id == $item->id ? 'selected' : '' }}>
+                                {{ $item->nama_supplier }}
+                            </option>
+                        @endforeach
+                    </select>
                 </div>
 
                 <div class="mb-3">
@@ -35,7 +46,7 @@
                     <div class="mt-3 text-center">
                         <p class="small text-muted">Preview Foto:</p>
                         <img id="fotoPreview" class="img-thumbnail img-preview" 
-                             src="{{ $barang->foto ? asset('foto/' . $barang->foto) : 'https://via.placeholder.com/80' }}" 
+                             src="{{ $data->foto ? asset('foto/' . $data->foto) : 'https://via.placeholder.com/80' }}" 
                              alt="Foto Barang">
                     </div>
                 </div>

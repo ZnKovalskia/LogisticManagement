@@ -9,7 +9,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\TestimoniController;
 use App\Http\Controllers\BarangController;
-use App\Http\Controllers\IBarangController;
+use App\Http\Controllers\SupplierController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,7 +49,7 @@ Route::get('/dashboard', function () {
 
 Route::get('/dashboard', [BarangController::class, 'barang'])->name('dashboard')->middleware('iniLogin');
 
-Route::resource('departemen', DepartemenController::class)->middleware('iniLogin');
+Route::resource('supplier', SupplierController::class)->parameters(['barang' => 'kode_barang']);
 Route::resource('role', RoleController::class)->middleware('iniLogin');
 Route::resource('ibarang', IbarangController::class)->middleware('iniLogin');
 Route::resource('staff', StaffController::class)->parameters([
@@ -58,6 +58,7 @@ Route::resource('staff', StaffController::class)->parameters([
 
 Route::resource('barang', BarangController::class);
 
+Route::get('barang/{id}/edit', [BarangController::class, 'edit'])->name('barang.edit');
 Route::get('barang/{id}/tambah', [BarangController::class, 'tambah'])->name('barang.tambah');
 Route::post('barang/{id}/updateTambah', [BarangController::class, 'updateTambah'])->name('barang.updateTambah');
 

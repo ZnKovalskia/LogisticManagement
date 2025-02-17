@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\barang;
 use App\Models\testimoni;
 use App\Models\laporan;
+use App\Models\supplier;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -17,7 +18,7 @@ class BarangController extends Controller
     {
         //
         $barang = Barang::all();
-        return view('barang.index', compact('barang'));
+        return view('barang.index',['barang'=>$barang]);
     }
 
 
@@ -49,8 +50,8 @@ class BarangController extends Controller
     public function create()
     {
         //
-        
-        return view('barang.create');
+        $supplier = Supplier::all();
+        return view('barang.create', ['supplier'=>$supplier]);
     }
 
     /**
@@ -62,7 +63,14 @@ class BarangController extends Controller
         $request->validate([
             'kode_barang' => 'required|unique:barang',
             'nama_barang' => 'required',
+            'supplier_id' => 'required',
             'foto'=>'required|mimes:jpeg,jpg,png,gif',
+        ],[
+            'kode_barang.required' => 'Kode Barang Wajib Diisi',
+            'nama_barang.required' => 'Nama Barang Wajib Diisi',
+            'supplier_id.required' => 'Supplier Wajib Diisi',
+            'foto.required'=>'Foto Diperbolehkan Berekstensi jpeg,jpg,png,gif',
+            'foto.mimes'=>'Foto Diperbolehkan Berekstensi jpeg,jpg,png,gif',
         ]);
 
         $foto_file = $request->file('foto');
@@ -70,13 +78,16 @@ class BarangController extends Controller
         $foto_nama = date('ywdhis'). "." .$foto_ekstensi;
         $foto_file->move(public_path('foto'),$foto_nama);
 
-        $data = $request->all();
-        $data['barang_masuk'] = $request->input('barang_masuk', 0);
-        $data['barang_keluar'] = $request->input('barang_keluar', 0);
-        $data['foto'] = $foto_nama;
-
+        $data = [
+            'barang_masuk'=>$request->input('barang_masuk', 0),
+            'barang_keluar'=>$request->input('barang_keluar', 0),
+            'kode_barang'=>$request->input('kode_barang'),    
+            'nama_barang'=>$request->input('nama_barang'),    
+            'supplier_id'=>$request->input('supplier_id'),    
+            'foto'=>$foto_nama,
+        ];
         Barang::create($data);
-        return redirect()->route('barang.index')->with('success', 'Barang berhasil ditambahkan');
+        return redirect('barang')->with('success','Barang Berhasil Ditambahkan')->with('success', 'Barang berhasil ditambahkan');
     }
 
     
@@ -95,25 +106,41 @@ class BarangController extends Controller
     public function edit($id)
     {
         //
-        $barang = Barang::findOrFail($id);
-        return view('barang.edit', compact('barang'));
+        $supplier = Supplier::all();
+        $data = Barang::where('id',$id)->first();
+
+        
+        
+        return view('barang.edit',['supplier'=>$supplier, 'data'=>$data]);
+
     }
 
-    /**
+    /**c
      * Update the specified resource in storage.
      */
     public function update(Request $request, $id)
     {
-        $barang = Barang::findOrFail($id);
-
         // Validasi input
         $request->validate([
             'nama_barang' => 'required',
-            'foto' => 'nullable|mimes:jpeg,jpg,png,gif|max:2048', // Foto opsional, maksimal 2MB
+            'supplier_id' => 'required',
+            'foto'=>'required|mimes:jpeg,jpg,png,gif',
+        ],[
+            'nama_barang.required' => 'Nama Barang Wajib Diisi',
+            'supplier_id.required' => 'Supplier Wajib Diisi',
+            'foto.required'=>'Foto Diperbolehkan Berekstensi jpeg,jpg,png,gif',
+            'foto.mimes'=>'Foto Diperbolehkan Berekstensi jpeg,jpg,png,gif',
         ]);
-
+        $barang = barang::where('id', $id)->first();
         // Update nama barang
-        $barang->nama_barang = $request->input('nama_barang');
+
+        $data = [
+            'barang_masuk'=>$request->input('barang_masuk', 0),
+            'barang_keluar'=>$request->input('barang_keluar', 0),
+            'nama_barang'=>$request->input('nama_barang'),    
+            'supplier_id'=>$request->input('supplier_id'),    
+            'foto'=>$foto_nama,
+        ];
 
         // Update foto jika ada file baru
         if ($request->hasFile('foto')) {
@@ -130,13 +157,11 @@ class BarangController extends Controller
             }
 
             // Update nama foto di database
-            $barang->foto = $foto_nama;
         }
 
         // Simpan perubahan
-        $barang->save();
-
-        return redirect()->route('barang.index')->with('success', 'Barang berhasil diperbarui');
+        barang::where('id', $id)->update($data);
+        return redirect('barang')->with('success', 'Barang Berhasil Dirubah');
     }
 
     public function updateTambahAjax(Request $request, $id)

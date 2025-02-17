@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<form action="{{ route('departemen.store') }}" method="POST">
+<form action="{{ route('supplier.store') }}" method="POST">
     @csrf
     <div class="row">
         <div class="col-12">
@@ -13,9 +13,9 @@
                 </div>
                 <div class="card-body px-4 pb-2">
                     <div class="form-group">
-                        <label for="nama_departemen" class="form-label">Departemen Name</label>
-                        <input type="text" class="form-control @error('nama_departemen') is-invalid @enderror" id="nama_departemen" name="nama_departemen" value="{{ old('nama_departemen') }}" required>
-                        @error('nama_departemen')
+                        <label for="nama_supplier" class="form-label">Departemen Name</label>
+                        <input type="text" class="form-control @error('nama_supplier') is-invalid @enderror" id="nama_supplier" name="nama_supplier" value="{{ old('nama_supplier') }}" required>
+                        @error('nama_supplier')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
@@ -24,7 +24,7 @@
                     <button type="submit" class="btn btn-gradient-dark btn-sm" style="font-family: 'Inter', sans-serif; color: white;">
                         <span class="material-symbols-rounded me-1">save</span> Save
                     </button>
-                    <a href="{{ route('departemen.index') }}" class="btn btn-gradient-dark btn-sm" style="font-family: 'Inter', sans-serif; color: white;">
+                    <a href="{{ route('supplier.index') }}" class="btn btn-gradient-dark btn-sm" style="font-family: 'Inter', sans-serif; color: white;">
                         <span class="material-symbols-rounded me-1">cancel</span> Cancel
                     </a>
                 </div>
