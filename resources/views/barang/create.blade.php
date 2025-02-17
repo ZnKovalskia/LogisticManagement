@@ -32,21 +32,7 @@
                                     </select>
                     </div>
 
-                    <div class="form-group">
-                        <label class="form-label">Stok</label>
-                        <input type="number" class="form-control" name="quantity" required min="0" placeholder="0">
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Barang Masuk</label>
-                        <input type="number" class="form-control" name="barang_masuk" min="0" placeholder="0">
-                    </div>
-
-                    <div class="form-group">
-                        <label class="form-label">Barang Keluar</label>
-                        <input type="number" class="form-control" name="barang_keluar" min="0" placeholder="0">
-                    </div>
-
+                    
                     <!-- Upload Foto -->
                     <div class="form-group">
                         <label for="foto" class="form-label">Upload Foto Barang</label>

@@ -11,7 +11,6 @@ class supplier extends Model
 {
     use HasFactory;
     protected $fillable = ['nama_supplier'];
-    protected $id = 'id';
     protected $table = 'supplier';
 
     public function barang()

@@ -124,15 +124,15 @@ class BarangController extends Controller
         $request->validate([
             'nama_barang' => 'required',
             'supplier_id' => 'required',
-            'foto'=>'required|mimes:jpeg,jpg,png,gif',
+            'foto'=>'|mimes:jpeg,jpg,png,gif',
         ],[
             'nama_barang.required' => 'Nama Barang Wajib Diisi',
             'supplier_id.required' => 'Supplier Wajib Diisi',
-            'foto.required'=>'Foto Diperbolehkan Berekstensi jpeg,jpg,png,gif',
             'foto.mimes'=>'Foto Diperbolehkan Berekstensi jpeg,jpg,png,gif',
         ]);
         $barang = barang::where('id', $id)->first();
         // Update nama barang
+        $foto_nama = $barang->foto;
 
         $data = [
             'barang_masuk'=>$request->input('barang_masuk', 0),
@@ -147,16 +147,13 @@ class BarangController extends Controller
             $foto_file = $request->file('foto');
             $foto_ekstensi = $foto_file->extension();
             $foto_nama = date('ywdhis') . "." . $foto_ekstensi;
-
-            // Simpan foto baru
             $foto_file->move(public_path('foto'), $foto_nama);
-
-            // Hapus foto lama jika ada
-            if ($barang->foto && File::exists(public_path('foto/' . $barang->foto))) {
-                File::delete(public_path('foto/' . $barang->foto));
+    
+            if (File::exists(public_path('foto') . '/' . $barang->foto)) {
+                File::delete(public_path('foto') . '/' . $barang->foto);
             }
-
-            // Update nama foto di database
+    
+            $data['foto'] = $foto_nama;
         }
 
         // Simpan perubahan
